@@ -1,9 +1,10 @@
 //VARS//
+var counter = 60;
 var startButton = document.getElementById('start-btn');
 var qContainer = document.getElementById('question-container');
 var questionElement = document.getElementById("question");
 var currentQuestionIndex = 0
-var time = document.getElementById("timertime");
+var timer = document.getElementById("timertime");
 var answerButtonsElement = document.getElementById("answer-btn");
 
 startButton.addEventListener('click', startGame)
@@ -18,6 +19,13 @@ function startGame() {
 
 //FUNCTION FOR NEXT Q//
 function setNextQuestion() {
+    
+    timer.textContent = counter;
+    function timeIt(){
+        counter --;
+        timer.textContent = counter;
+    }
+    setInterval(timeIt, 1000);
     var currentQuestions = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestions.title;
         currentQuestions.choices.forEach(function (choice, i){
@@ -31,21 +39,9 @@ function setNextQuestion() {
     })
     
 function clickAnswer() {
-    console.log(clickAnswer);
-}
-
-
-    //for (i = 0; i < questions.length; i++){
-    //questionElement.textContent = questions[i].title;
-    //for (j = 0; j < questions[i].choices.length; j++){
-    //var choiceBtn = document.createElement("button");
-    //choiceBtn.classList.add("btn");
-   // choiceBtn.classList.add("btn-dark");
-    //choiceBtn.textContent = questions[i].choices[j]
-    //answerButtonsElement.appendChild(choiceBtn);
-   // }
-}
-//FUNCTION FOR ANSWER BTNS//
-function selectAnswer() {
-
-}
+    //console.log(clickAnswer);
+    var someAnswer = currentQuestions.answer
+    if (choice[i] === someAnswer){
+        console.log("you are right")
+    }
+}}
