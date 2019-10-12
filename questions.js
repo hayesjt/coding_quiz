@@ -12,7 +12,7 @@ var questions = [
         answer: "jQuery" //C//
     },
     {
-        title: "When making an array what type of brackets are needed?",
+        title: "When making an array in JavaScript what type of brackets are needed?",
         choices: ["Curly", "Square", "Parenthises","Carrots"],
         answer: "Square" //B//
     },
@@ -27,7 +27,7 @@ var questions = [
         answer: "Brendan Eich" //D//
     },
     {
-        title: "What year was it invented?",
+        title: "What year was JavaScript it invented?",
         choices: ["1899", "1990", "1995","1996"],
         answer: "1995" //C//
     }
